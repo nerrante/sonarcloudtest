@@ -20,7 +20,7 @@ function App() {
         </a>
         <a
             className="App-link"
-            href="http://duckduckgo.com"
+            href="https://duckduckgo.com"
             target="_blank"
             rel="noopener noreferrer"
         >
