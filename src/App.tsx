@@ -26,6 +26,14 @@ function App() {
         >
           DuckDuckGo
         </a>
+        <a
+            className="App-link"
+            href="https://species360.org"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+          Species360
+        </a>
       </header>
     </div>
   );
