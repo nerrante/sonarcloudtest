@@ -29,7 +29,8 @@
     ]
   },
   "jest": {
-    "coverageReporters": ["lcov"]
+    "coverageReporters": ["lcov"],
+    "testMatch":  "*/tests/?(*.)+(spec|test).[jt]s?(x)"
   },
   "browserslist": {
     "production": [
