@@ -32,7 +32,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
         >
-          Species360
+          Species360!
         </a>
       </header>
     </div>
