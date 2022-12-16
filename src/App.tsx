@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Hello from "./Hello";
 
 function App() {
   return (
@@ -39,9 +40,5 @@ function App() {
     </div>
   );
 }
-
-const Hello = () => {
-    return <h1>Hello world!</h1>;
-};
 
 export default App;
