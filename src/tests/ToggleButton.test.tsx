@@ -9,13 +9,13 @@ import {act} from "react-dom/test-utils";
   expect(button).toBeInTheDocument()
  });
 
- // test('if click button twice, background color should change to red then blue', () => {
- //  render(<ToggleButton />);
- //  const button = screen.getByText(/toggle me/i);
- //  act(()=> {button.click()})
- //  expect(button.style.backgroundColor).toBe('red')
- //  act(()=> {button.click()})
- //  expect(button.style.backgroundColor).toBe('blue')
- // });
+ test('if click button twice, background color should change to red then blue', () => {
+  render(<ToggleButton />);
+  const button = screen.getByText(/toggle me/i);
+  act(()=> {button.click()})
+  expect(button.style.backgroundColor).toBe('red')
+  act(()=> {button.click()})
+  expect(button.style.backgroundColor).toBe('blue')
+ });
 
 
