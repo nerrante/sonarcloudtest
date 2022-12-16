@@ -37,7 +37,7 @@ function App() {
           Species360!
         </a>
         <Hello />
-        <ToggleButton disabled={false} />
+        <ToggleButton />
       </header>
     </div>
   );

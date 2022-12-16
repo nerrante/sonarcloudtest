@@ -1,8 +1,6 @@
 import {useState} from "react";
 
-const ToggleButton = ({}: {
-    disabled: boolean,
-}): JSX.Element => {
+const ToggleButton = (): JSX.Element => {
     const [color, setColor] = useState<string>('blue')
 
     const changeColor = () => {
