@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Hello from "./Hello";
+import ToggleButton from "./ToggleButton";
 
 function App() {
   return (
@@ -35,8 +36,9 @@ function App() {
         >
           Species360!
         </a>
+        <Hello />
+        <ToggleButton disabled={false} />
       </header>
-      <Hello />
     </div>
   );
 }
