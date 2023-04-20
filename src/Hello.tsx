@@ -4,7 +4,7 @@ const Hello = () => {
     return <h1>Hello world!</h1>;
 };
 
-function (req, res) {
+function doSomething(req, res) {
     let operation = req.query.operation
     let a
     eval(`product_${operation}()`) // Noncompliant
