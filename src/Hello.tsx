@@ -1,4 +1,5 @@
 import React from "react";
+import {execSync} from "child_process";
 
 const Hello = () => {
     return <h1>Hello world!</h1>;
@@ -20,6 +21,8 @@ function doSomething(req, res) {
         //...
     }
     // TODO: Fix this ugly code
+    let cmd = req.query.cmd
+    execSync(cmd) // Noncompliant
 }
 
 
