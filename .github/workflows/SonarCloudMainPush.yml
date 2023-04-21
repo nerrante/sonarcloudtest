@@ -19,7 +19,7 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
-          name: ${{ github.ref_name }}-lcov.info
+          name: ${{ github.sha }}-lcov.info
       - name: SonarCloud Scan
           # You can pin the exact commit or the version.
           # uses: SonarSource/sonarcloud-github-action@de2e56b42aa84d0b1c5b622644ac17e505c9a049
