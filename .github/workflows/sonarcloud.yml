@@ -21,10 +21,17 @@ jobs:
         run: npm install
       - name: Test and coverage
         run: npm test -- --coverage --watchAll="false"
+      - name: Setting artifact tag
+        uses: actions/github-script@v6
+        with:
+          script: |
+            core.setOutput('tag_name', '${{ github.head_ref }}'.toLowerCase().replaceAll(/[/.]/g, '-').trim('-'));
       - name: Upload coverage report
+        env:
+          TAG_NAME: ${{ needs.variables.outputs.tag_name }}
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ github.ref }}lcov.info
+          name: ${{ env.TAG_NAME }}-lcov.info
           path: ./coverage/lcov.info
       - name: SonarCloud Scan
           # You can pin the exact commit or the version.
