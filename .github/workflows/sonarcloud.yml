@@ -22,10 +22,11 @@ jobs:
       - name: Test and coverage
         run: npm test -- --coverage --watchAll="false"
       - name: Setting artifact tag
+        id: vars
         uses: actions/github-script@v6
         with:
           script: |
-            core.setOutput('tag_name', '${{ github.head_ref }}'.toLowerCase().replaceAll(/[/.]/g, '-').trim('-'));
+            core.setOutput('tag_name', '${{ github.ref }}'.toLowerCase().replaceAll(/[/.]/g, '-').trim('-'));
       - name: Test set output
         env:
           TAG_NAME: ${{ steps.vars.outputs.tag_name }}

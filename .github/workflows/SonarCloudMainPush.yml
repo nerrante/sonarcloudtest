@@ -17,10 +17,11 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Setting artifact tag
+        id: vars
         uses: actions/github-script@v6
         with:
         script: |
-          core.setOutput('tag_name', '${{ github.head_ref }}'.toLowerCase().replaceAll(/[/.]/g, '-').trim('-'));
+          core.setOutput('tag_name', '${{ github.ref }}'.toLowerCase().replaceAll(/[/.]/g, '-').trim('-'));
       - name: Test set output
         run: echo ${{ steps.vars.outputs.repo_name }}
       - name: Download a single artifact
