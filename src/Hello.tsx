@@ -21,7 +21,6 @@ export function doSomething(req, res) {
         //...
     }
     // TODO: Fix this ugly code
-    //test
     // let cmd = req.query.cmd
     // execSync(cmd) // Noncompliant
     let apple = 'apple'
