@@ -6,7 +6,7 @@ on:
     types: ["opened", "ready_for_review", "synchronize"]
   workflow_dispatch:
 env:
-  coverage_report: ${{ jobs.sonarcloud.outputs.artifact_name }}-lcov.info
+  coverage_report: ${{ jobs.sonarcloud.outputs.output1 }}-lcov.info
 
 permissions:
   pull-requests: read # allows SonarCloud to decorate PRs with analysis results
@@ -15,6 +15,8 @@ jobs:
   sonarcloud:
     name: Analyze with SonarCloud
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.vars.outputs.artifact_name }}-lcov.info
     steps:
       - uses: actions/checkout@v2
         with:
