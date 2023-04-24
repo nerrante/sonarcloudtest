@@ -31,12 +31,12 @@ jobs:
         env:
           TAG_NAME: ${{ steps.vars.outputs.tag_name }}
         run: |
-          echo ${{ steps.vars.outputs.repo_name }}
+          echo ${{ steps.vars.outputs.tag_name }}
           echo ${{ env.TAG_NAME }}
       - name: Upload coverage report
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ env.TAG_NAME }}-lcov.info
+          name: ${{ steps.vars.outputs.tag_name }}-lcov.info
           path: ./coverage/lcov.info
       - name: SonarCloud Scan
           # You can pin the exact commit or the version.
