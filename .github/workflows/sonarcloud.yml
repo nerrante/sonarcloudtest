@@ -24,7 +24,7 @@ jobs:
       - name: Upload coverage report
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ github.head_ref }}-lcov.info
+          name: ${{ github.ref }}lcov.info
           path: ./coverage/lcov.info
       - name: SonarCloud Scan
           # You can pin the exact commit or the version.
