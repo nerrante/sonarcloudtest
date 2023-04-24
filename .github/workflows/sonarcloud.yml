@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
     types: ["opened", "ready_for_review", "synchronize"]
   workflow_dispatch:
+  workflow_call:
     outputs:
       coverageReport:
         description: "The coverage report name for this job"
