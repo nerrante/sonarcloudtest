@@ -26,9 +26,13 @@ jobs:
         with:
           script: |
             core.setOutput('tag_name', '${{ github.head_ref }}'.toLowerCase().replaceAll(/[/.]/g, '-').trim('-'));
-      - name: Upload coverage report
+      - name: Test set output
         env:
-          TAG_NAME: ${{ needs.variables.outputs.tag_name }}
+          TAG_NAME: ${{ steps.vars.outputs.tag_name }}
+        run: |
+          echo ${{ steps.vars.outputs.repo_name }}
+          echo ${{ env.TAG_NAME }}
+      - name: Upload coverage report
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.TAG_NAME }}-lcov.info

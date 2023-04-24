@@ -21,10 +21,12 @@ jobs:
         with:
         script: |
           core.setOutput('tag_name', '${{ github.head_ref }}'.toLowerCase().replaceAll(/[/.]/g, '-').trim('-'));
+      - name: Test set output
+        run: echo ${{ steps.vars.outputs.repo_name }}
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         env:
-          TAG_NAME: ${{ needs.variables.outputs.tag_name }}
+          TAG_NAME: ${{ steps.vars.outputs.tag_name }}
         with:
           name: ${{env.TAG_NAME }}-lcov.info
       - name: SonarCloud Scan
