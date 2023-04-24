@@ -7,25 +7,22 @@ on:
   workflow_dispatch:
   
 jobs:
+  pullWorkflow:
+    uses: nerrante/sonarcloudtest/.github/workflows/sonarcloud.yml
   sonarcloud:
     name: Analyze with SonarCloud
     runs-on: ubuntu-latest
+    needs: pullWorkflow
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 
       - name: Install dependencies
         run: npm install
-      - name: Setting artifact name
-        id: vars
-        uses: actions/github-script@v6
-        with:
-          script: |
-            core.setOutput('artifact_name', '${{ github.ref }}'.toLowerCase().replaceAll(/[/.]/g, '-').trim('-'));
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
-          name: ${{ steps.vars.outputs.artifact_name }}-lcov.info
+          name: ${{ needs.pullWorkflow.outputs.coverageReport }}-lcov.info
       - name: SonarCloud Scan
           # You can pin the exact commit or the version.
           # uses: SonarSource/sonarcloud-github-action@de2e56b42aa84d0b1c5b622644ac17e505c9a049
