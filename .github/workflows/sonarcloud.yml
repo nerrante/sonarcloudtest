@@ -39,6 +39,7 @@ jobs:
     name: Analyze with SonarCloud
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
+    steps:
       - name: Build with npm
         run: npm run build
 
