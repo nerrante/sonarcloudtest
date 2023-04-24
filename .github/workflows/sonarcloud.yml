@@ -17,7 +17,6 @@ permissions:
 jobs:
   sonarcloud:
     name: Analyze with SonarCloud
-    id: pull
     runs-on: ubuntu-latest
     outputs:
       output1: ${{ steps.vars.outputs.artifact_name }}-lcov.info
