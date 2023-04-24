@@ -1,6 +1,9 @@
 name: SonarCloud analysis
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches: [ "main" ]
     types: ["opened", "ready_for_review", "synchronize"]
@@ -23,20 +26,6 @@ jobs:
         run: npm install
       - name: Test and coverage
         run: npm test -- --coverage --watchAll="false"
-      - name: Setting artifact name
-        id: vars
-        uses: actions/github-script@v6
-        with:
-          script: |
-            core.setOutput('artifact_name', '${{ github.ref }}'.toLowerCase().replaceAll(/[/.]/g, '-').trim('-'));
-      - name: set env var
-        run:
-          echo "coverage_report=${{ steps.vars.outputs.artifact_name }}" >> "$GITHUB_ENV"
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ steps.vars.outputs.artifact_name }}-lcov.info
-          path: ./coverage/lcov.info
       - name: SonarCloud Scan
           # You can pin the exact commit or the version.
         # uses: SonarSource/sonarcloud-github-action@de2e56b42aa84d0b1c5b622644ac17e505c9a049
