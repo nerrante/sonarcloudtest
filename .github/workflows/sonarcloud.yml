@@ -6,7 +6,7 @@ on:
     types: ["opened", "ready_for_review", "synchronize"]
   workflow_dispatch:
 env:
-  coverage_report: ${{ steps.vars.outputs.artifact_name }}-lcov.info
+  coverage_report: ${{ jobs.sonarcloud.outputs.artifact_name }}-lcov.info
 
 permissions:
   pull-requests: read # allows SonarCloud to decorate PRs with analysis results
