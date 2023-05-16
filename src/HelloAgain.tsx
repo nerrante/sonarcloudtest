@@ -1,7 +1,7 @@
 import React from "react";
 import {execSync} from "child_process";
 
-const Hello = () => {
+const HelloAgain = () => {
     return <h1>Hello world!</h1>;
 };
 
@@ -12,7 +12,7 @@ export function doSomething(req, res) {
    // res.send("OK")
    // res.send("OK")
     a == 1; // Noncompliant; was assignment intended?
-    var msg = "Hello, "
+    var msg = "HelloAgain, "
     "World!"; // Noncompliant; have we forgotten '+' operator on previous line?
     let password = 'mypassword'
     if (password == 'mypassword') {
@@ -28,4 +28,4 @@ export function doSomething(req, res) {
 
 
 
-export default Hello
+export default HelloAgain

@@ -36,7 +36,7 @@ jobs:
             -Dsonar.projectKey=nerrante_sonarcloudtest
             -Dsonar.organization=nerrante
   build:
-    name: Analyze with SonarCloud
+    name: Build with npm
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     steps:
