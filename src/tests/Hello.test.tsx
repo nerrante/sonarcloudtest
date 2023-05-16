@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {doSomething} from "../Hello";
+import {doSomething} from "../HelloAgain";
 
 test('getting test coverage', () => {
   let a = {
