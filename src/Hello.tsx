@@ -8,7 +8,7 @@ export function doSomething(req, res) {
     let operation = req.query.operation
     let a
    // eval(`product_${operation}()`) // Noncompliant
-   // res.send("OK")
+   // res.send("OK")a
    // res.send("OK")
     a == 1; // Noncompliant; was assignment intended?
     const msg = "Hello, "
