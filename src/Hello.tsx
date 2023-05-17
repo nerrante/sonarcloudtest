@@ -14,7 +14,7 @@ export function doSomething(req, res) {
     const msg = "Hello, "
     "World!"; // Noncompliant; have we forgotten '+' operator on previous line?
     let password = 'mypassword'
-    const password2 = 'anotherpassword'
+    const fruit = 'anotherpassword'
     if (password == 'mypassword') {
         // ...
     } if (password == 1) {  // Noncompliant
