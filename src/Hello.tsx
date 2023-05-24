@@ -11,8 +11,7 @@ export function doSomething(req, res) {
    // res.send("OK")a
    // res.send("OK")
     a == 1; // Noncompliant; was assignment intended?
-    const msg = "Hello, "
-    "World!"; // Noncompliant; have we forgotten '+' operator on previous line?
+    const msg = "Hello, " + "World!"; // Noncompliant; have we forgotten '+' operator on previous line?
     let password = 'mypassword'
     const fruit = 'anotherpassword'
     if (password == 'mypassword') {
