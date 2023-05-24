@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import HelloAgain from "./HelloAgain";
+import Hello from "./Hello";
 import ToggleButton from "./ToggleButton";
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
         >
           Species360!
         </a>
-        <HelloAgain />
+        <Hello />
         <ToggleButton />
       </header>
     </div>
